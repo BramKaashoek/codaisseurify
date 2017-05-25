@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :artist do
-    name "MyString"
-    genre "MyString"
-    country "MyString"
-    website "MyString"
+    name  { Faker::Name.first_name}
+    genre  { Faker::Color.color_name }
+    country { Faker::Address.country }
+    website { Faker::Internet.domain_name }
   end
 end
