@@ -1,3 +1,6 @@
+Artist.destroy_all
+
+
 belakor = Artist.create!(name: "Be'lakor", genre: "Melodic Death Metal", country: "Australia", website: "belakorband.com")
 insomnium = Artist.create!(name: "Insomnium", genre: "Melodic Death Metal", country: "Finland", website: "insomnium.net")
 burial = Artist.create!(name: "Burial", genre: "Dubstep", country: "Great Britain", website: "burial.bandcamp.com")
