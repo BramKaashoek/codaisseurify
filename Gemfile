@@ -53,6 +53,7 @@ end
 
 group :test do
   gem 'capybara', '~> 2.9', '>= 2.9.1'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -63,3 +64,4 @@ gem 'jquery-rails', '~> 4.3.1'
 gem 'carrierwave', '0.11.2'
 gem 'cloudinary', '1.2.3'
 gem 'rails_12factor', group: :production
+gem 'devise', '~> 4.2'
