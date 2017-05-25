@@ -3,6 +3,7 @@ class ArtistsController < ApplicationController
 
   def index
     @artists = Artist.all
+    @artist_images = ArtistImage.all
   end
 
   def show

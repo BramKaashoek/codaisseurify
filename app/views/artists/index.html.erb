@@ -1,0 +1,12 @@
+<div class="container-fluid col-md-10 col-md-offset-1">
+  <% @artists.each do |artist| %>
+  <div class="col-md-5 col-md-offset-1 panel panel-primary">
+    <h1><%= link_to artist.name, artist %></h1>
+    <div>
+      <%= image_tag artist.artist_image.image, :class => "style_image" %>
+    </div>
+    <div class="col-md-5"><%= artist.country  %></div>
+    <div class="col-md-7 text-right"><%= artist.genre %></div>
+  </div>
+  <% end %>
+</div>
