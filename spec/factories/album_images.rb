@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :album_image do
-    image "MyString"
+    image {Faker::Internet.domain_name}
   end
 end
