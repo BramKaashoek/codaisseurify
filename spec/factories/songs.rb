@@ -4,7 +4,7 @@ FactoryGirl.define do
     album { Faker::Hobbit.location }
     track_number { Faker::Number.number(2) }
     year { Faker::Number.between(1990, 2017) }
-    artist { build :user }
+    artist { build :artist }
     album_image { build :album_image }
   end
 end
