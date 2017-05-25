@@ -9,7 +9,7 @@ RSpec.describe Song, type: :model do
 
   describe "associations" do
     it { should belong_to(:artist) }
-    it { should have_a(:abum_image)}
+    it { should belong_to(:album_image) }
   end
 
 end

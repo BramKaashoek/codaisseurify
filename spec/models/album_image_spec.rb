@@ -7,6 +7,6 @@ RSpec.describe AlbumImage, type: :model do
   end
 
   describe "associations" do
-    it {should have_many(:songs)}
+    it { should have_many(:songs) }
   end
 end
