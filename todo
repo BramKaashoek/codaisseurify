@@ -1,0 +1,12 @@
+deis login https://deis.codaisseur.cloud
+xizam//xizam
+
+deis whoami
+
+deis keys:add
+
+deis create codaisseurify
+
+alea config --controller=https://services.codaisseur.cloud
+
+alea services add postgres
