@@ -5,10 +5,15 @@ class SongsController < ApplicationController
   end
 
   def new
-    @song = @artist.songs.build
+    @song = Song.new(artist: @artist)
   end
 
   def create
+    @song = Song.new(song_params)
+    # @song = @artist.songs.create(song_params)
+    if @song.save
+      redirect_to @artist
+    end
   end
 
   def destroy
