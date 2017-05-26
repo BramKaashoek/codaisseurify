@@ -23,6 +23,8 @@ class ArtistsController < ApplicationController
   end
 
   def destroy
+    @artist.destroy
+    redirect_to root_path
   end
 
   private

@@ -5,17 +5,20 @@ class SongsController < ApplicationController
   end
 
   def new
+    @song = @artist.songs.build
   end
 
   def create
   end
 
   def destroy
+    @song.destroy
+    redirect_to @song.artist
   end
 
   private
   def set_song
-    @song = song.find(params[:id])
+    @song = Song.find(params[:id])
   end
 
   def song_params
