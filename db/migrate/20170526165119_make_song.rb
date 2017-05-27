@@ -4,6 +4,7 @@ class MakeSong < ActiveRecord::Migration[5.1]
       t.string :name
       t.integer :track_number
       t.references :artist, foreign_key: true
+      t.references :album, foreign_key: true
 
       t.timestamps
     end

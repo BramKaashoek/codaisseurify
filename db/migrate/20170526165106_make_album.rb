@@ -1,6 +1,6 @@
 class MakeAlbum < ActiveRecord::Migration[5.1]
   def change
-    create_table :album do |t|
+    create_table :albums do |t|
       t.string :image
       t.string :name
       t.integer :year

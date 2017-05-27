@@ -15,10 +15,10 @@ rammstein_image =  ArtistImage.create!(remote_image_url: "http://res.cloudinary.
 
 belakor_of_breath_and_bone= Album.create!(name: "Of Breath and Bone", year: 2012, artist: belakor, remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710088/belakor_of_breath_and_bone_rgoder.jpg")
 insomnium_winters_gate= Album.create!(name: "Winter's Gate", year: 2016, artist: insomnium, remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710088/insomnium_winters_gate_xqubow.jpg")
-insomnium_above_the_weeping_worlde = Album.create!(name: "Above the Weeping World", year: 2006, artist: insomnium, remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710088/insomnium_above_the_weeping_world_mm3xnj.jpg")
+insomnium_above_the_weeping_world = Album.create!(name: "Above the Weeping World", year: 2006, artist: insomnium, remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710088/insomnium_above_the_weeping_world_mm3xnj.jpg")
 burial_untrue = Album.create!(name: "Untrue", year: 2007, artist: burial, remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710088/burial_untrue_lpgelf.jpg")
 katatonia_the_fall_of_hearts = Album.create!(name: "The Fall of Hearts", year: 2016, artist: katatonia, remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710088/katatonia_fall_of_hearts_pnqiec.jpg")
-rammstein_reise_reise = Album.create!(name: "Reise, Reise", artist: Rammstein, year: 2004, remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710088/rammstein_reise_reise_f49uww.jpg")
+rammstein_reise_reise = Album.create!(name: "Reise, Reise", artist: rammstein, year: 2004, remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710088/rammstein_reise_reise_f49uww.jpg")
 
 Song.create!( name: "Part 1", album: insomnium_winters_gate, track_number: 1, artist: insomnium )
 Song.create!( name: "Part 2", album: insomnium_winters_gate, track_number: 2, artist: insomnium )
@@ -44,7 +44,7 @@ Song.create!( name: "The Killjoy", album: insomnium_above_the_weeping_world, tra
 Song.create!( name: "Last Statement", album: insomnium_above_the_weeping_world, track_number: 7, artist: insomnium )
 Song.create!( name: "Devoid of Caring", album: insomnium_above_the_weeping_world, track_number: 8, artist: insomnium )
 Song.create!( name: "In the Groves of Death", album: insomnium_above_the_weeping_world, track_number: 9, artist: insomnium )
-Song.create!( name: "Takeover", album: katatonia_the_fall_of_hearts_image, track_number: 1, artist: katatonia )
+Song.create!( name: "Takeover", album: katatonia_the_fall_of_hearts, track_number: 1, artist: katatonia )
 Song.create!( name: "Serein", album: katatonia_the_fall_of_hearts, track_number: 2, artist: katatonia )
 Song.create!( name: "Old Heart Falls", album: katatonia_the_fall_of_hearts, track_number: 3, artist: katatonia )
 Song.create!( name: "Decima", album: katatonia_the_fall_of_hearts, track_number: 4, artist: katatonia )

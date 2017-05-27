@@ -15,14 +15,14 @@ ActiveRecord::Schema.define(version: 20170526165234) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "album", force: :cascade do |t|
+  create_table "albums", force: :cascade do |t|
     t.string "image"
     t.string "name"
     t.integer "year"
     t.bigint "artist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["artist_id"], name: "index_album_on_artist_id"
+    t.index ["artist_id"], name: "index_albums_on_artist_id"
   end
 
   create_table "artist_images", force: :cascade do |t|
@@ -46,8 +46,10 @@ ActiveRecord::Schema.define(version: 20170526165234) do
     t.string "name"
     t.integer "track_number"
     t.bigint "artist_id"
+    t.bigint "album_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["album_id"], name: "index_songs_on_album_id"
     t.index ["artist_id"], name: "index_songs_on_artist_id"
   end
 
@@ -68,7 +70,8 @@ ActiveRecord::Schema.define(version: 20170526165234) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "album", "artists"
+  add_foreign_key "albums", "artists"
   add_foreign_key "artist_images", "artists"
+  add_foreign_key "songs", "albums"
   add_foreign_key "songs", "artists"
 end
