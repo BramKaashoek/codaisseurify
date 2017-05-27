@@ -1,6 +1,6 @@
 class Song < ApplicationRecord
   belongs_to :artist
-  belongs_to :album_image
+  belongs_to :album
 
-  validates :name, :album, :year, presence: true
+  validates :name, presence: true
 end
