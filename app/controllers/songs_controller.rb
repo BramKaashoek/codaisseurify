@@ -5,16 +5,18 @@ class SongsController < ApplicationController
   end
 
   def new
-    @song = Song.new(artist: @artist)
+    @artist = Artist.find(params[:artist_id])
+    @song = Song.new()
   end
 
   def create
-    @song = Song.new(song_params)
-    # @song = @artist.songs.create(song_params)
-    if @song.save
-      redirect_to @artist
-    else render :new
-    end
+    @song = Song.create(song_params)
+    if Song.exists?(@song.id)
+    redirect_to artist_path(params[:artist_id])
+  else
+    render 'new'
+  end
+
   end
 
   def destroy
@@ -28,6 +30,6 @@ class SongsController < ApplicationController
   end
 
   def song_params
-    params.require(:song).permit(:name, :album, :track_number, :year, :artist_id, :album_image_id)
+    params.require(:song).permit(:name, :album_id, :track_number, :artist_id)
   end
 end
