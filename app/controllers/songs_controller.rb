@@ -1,22 +1,21 @@
 class SongsController < ApplicationController
-  before_action :set_song, only: [:show, :destroy]
-
-  def show
-  end
+  before_action :set_song, only: [:destroy]
 
   def new
+    @song = Song.new
     @artist = Artist.find(params[:artist_id])
-    @song = Song.new()
+
   end
 
   def create
-    @song = Song.create(song_params)
-    if Song.exists?(@song.id)
-    redirect_to artist_path(params[:artist_id])
-  else
-    render 'new'
-  end
+    @artist = Artist.find(params[:artist_id])
+    @song = Song.new(song_params.merge(artist_id: params[:artist_id]))
 
+    if @song.save
+      redirect_to artist_path(params[:artist_id])
+    else
+      render 'new'
+    end
   end
 
   def destroy
