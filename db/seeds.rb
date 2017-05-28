@@ -80,3 +80,5 @@ Song.create!( name: "Morgenstern", album: rammstein_reise_reise, track_number: 8
 Song.create!( name: "Stein um Stein", album: rammstein_reise_reise, track_number: 9, artist: rammstein )
 Song.create!( name: "Ohne Dich", album: rammstein_reise_reise, track_number: 10, artist: rammstein )
 Song.create!( name: "Amour", album: rammstein_reise_reise, track_number: 11, artist: rammstein )
+
+user1 = User.create!(email:"henk@jan.com", password:"123456" )

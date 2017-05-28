@@ -9,11 +9,18 @@
     <div class="col-md-9">
       Track <%= song.track_number %> on <%= song.album.name %>
     </div>
+    <% if !user_signed_in? %>
     <div class="text-right col-md-3"><%= link_to "Delete", artist_song_path(song.artist.id, song.id) , method: :delete %> </div>
+    <% end %>
   </div>
   <% end %>
   <div class="col-md-11 col-md-offset-1 top-buffer">
-      <div class="text-left"><%= link_to "Add Song", new_artist_song_path(@artist.id) %></div>
-    <div class="text-right"><%= link_to "Delete Artist", artist_path(@artist), method: :delete, data: {confirm: "Are you sure?"} %></div>
+    <% if user_signed_in? %>
+      <div class=" col-md-6 text-left"><%= link_to "Add Song", new_artist_song_path(@artist.id) %></div>
+    <div class="col-md-6 text-right"><%= link_to "Delete Artist", artist_path(@artist), method: :delete, data: {confirm: "Are you sure?"} %></div>
+    <div cass="col-md-12"> &zwnj; </div>
+    <div cass="col-md-12">  &zwnj;</div>
+    <% end %>
   </div>
+
 </div>
