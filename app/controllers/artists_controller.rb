@@ -1,25 +1,14 @@
 class ArtistsController < ApplicationController
-  before_action :set_artist, only: [:show, :edit, :update, :destroy]
+  before_action :set_artist, only: [:show, :destroy]
 
   def index
     @artists = Artist.all
-    @artist_images = ArtistImage.all
+    if params[:order].in? %w[name ceated_at]
+      @artists.merge!(Artist.order("#{params[:order]} #{params[:direction]}"))
+    end
   end
 
   def show
-  end
-
-  def new
-
-  end
-
-  def create
-  end
-
-  def edit
-  end
-
-  def update
   end
 
   def destroy
