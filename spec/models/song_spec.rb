@@ -4,12 +4,12 @@ RSpec.describe Song, type: :model do
 
   describe "validations" do
     it { is_expected.to validate_presence_of(:name) }
-    it { is_expected.to validate_presence_of(:year) }
+    it { is_expected.to validate_presence_of(:track_number) }
   end
 
   describe "associations" do
     it { should belong_to(:artist) }
-    it { should belong_to(:album_image) }
+    it { should belong_to(:album) }
   end
 
 end
