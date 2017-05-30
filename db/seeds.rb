@@ -1,11 +1,13 @@
 Artist.destroy_all
+Album.destroy_all
+Song.destroy_all
 
 
-belakor = Artist.create!(name: "Be'lakor", genre: "Melodic Death Metal", country: "Australia", website: "belakorband.com", image: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710094/belakor_ogbgsg.jpg")
-burial = Artist.create!(name: "Burial", genre: "Dubstep", country: "Great Britain", website: "burial.bandcamp.com", image: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710094/burial_qf8qnk.jpg")
-insomnium = Artist.create!(name: "Insomnium", genre: "Melodic Death Metal", country: "Finland", website: "insomnium.net", image: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710094/insomnium_lt3gzo.jpg")
-katatonia = Artist.create!(name: "Katatonia", genre: "Progressive Metal", country: "Sweden", website: "katatonia.com", image: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710095/katatonia_vbwedk.jpg")
-rammstein = Artist.create!(name: "Rammstein", genre: "Neue Deutsche Harde", country: "Germany", website: "rammstein.de", image: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710094/rammstein_s1r2j2.jpg")
+belakor = Artist.create!(name: "Be'lakor", genre: "Melodic Death Metal", country: "Australia", website: "belakorband.com", remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710094/belakor_ogbgsg.jpg")
+burial = Artist.create!(name: "Burial", genre: "Dubstep", country: "Great Britain", website: "burial.bandcamp.com", remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710094/burial_qf8qnk.jpg")
+insomnium = Artist.create!(name: "Insomnium", genre: "Melodic Death Metal", country: "Finland", website: "insomnium.net", remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710094/insomnium_lt3gzo.jpg")
+katatonia = Artist.create!(name: "Katatonia", genre: "Progressive Metal", country: "Sweden", website: "katatonia.com", remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710095/katatonia_vbwedk.jpg")
+rammstein = Artist.create!(name: "Rammstein", genre: "Neue Deutsche Harde", country: "Germany", website: "rammstein.de", remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710094/rammstein_s1r2j2.jpg")
 
 belakor_of_breath_and_bone= Album.create!(name: "Of Breath and Bone", year: 2012, artist: belakor, remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710088/belakor_of_breath_and_bone_rgoder.jpg")
 insomnium_winters_gate= Album.create!(name: "Winter's Gate", year: 2016, artist: insomnium, remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710088/insomnium_winters_gate_xqubow.jpg")
@@ -61,7 +63,7 @@ Song.create!( name: "Untrue", album: burial_untrue, track_number: 8 )
 Song.create!( name: "Shell of Light", album: burial_untrue, track_number: 9 )
 Song.create!( name: "Dog Shelter", album: burial_untrue, track_number: 10 )
 Song.create!( name: "Homeless", album: burial_untrue, track_number: 11 )
-Song.create!( name: "UK", album: burial_untrue, track_number: 12, artist )
+Song.create!( name: "UK", album: burial_untrue, track_number: 12)
 Song.create!( name: "Raver", album: burial_untrue, track_number: 13 )
 Song.create!( name: "Reise, Reise", album: rammstein_reise_reise, track_number: 1 )
 Song.create!( name: "Mein Teil", album: rammstein_reise_reise, track_number: 2 )

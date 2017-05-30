@@ -9,7 +9,7 @@ class AlbumsController < ApplicationController
     @artist = Artist.find(params[:artist_id])
     @album = Album.new(album_params.merge(artist_id: params[:artist_id]))
     if @album.save
-      redirect_to new_artist_song_path(params[:artist_id])
+      redirect_to artist_albums_path(params[:artist_id])
     else
       render :new
     end
@@ -17,7 +17,13 @@ class AlbumsController < ApplicationController
 
   def index
     @artist = Artist.find(params[:artist_id])
-    @albums = Albums.find_by(artist_id: @artist.id)
+    @albums = @artist.albums
+  end
+
+  def destroy
+    @album = Album.find(params[:id])
+    @album.destroy
+    redirect_to artist_albums_path
   end
 
   private

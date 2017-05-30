@@ -1,17 +1,20 @@
 <div class="container-fluid col-md-10 col-md-offset-1">
-  <h3>Add song to album:</h3>
+  <h3 class="text-center">Select Album to Add Song To:</h3>
 
   <% @albums.each do |album| %>
   <div class="col-md-3 col-md-offset-1 panel panel-primary">
     <div class="col-md-12">
-      <h5><%= link_to album.name, new_artist_album_song_path(artist_id: @artist.id, album_id: album.id) %></h5>
+      <%= link_to album.name, new_artist_album_song_path(artist_id: @artist.id, album_id: album.id), class: "album-link-styling" %>
     </div>
     <div class="col-md-12">
-      <h5><%= link_to image_tag(album.image, class: "style_image"), new_artist_album_song_path(artist_id: @artist.id, album_id: album.id) %></h5>
+      <%= link_to image_tag(album.image.medium, class: "style_image"), new_artist_album_song_path(artist_id: @artist.id, album_id: album.id) %>
+    </div>
+    <div class="col-md-12">
+    <%= link_to "Delete Abum", artist_album_path(@artist.id, album.id), method: :delete, data: {confirm: "Are you sure?"} %>
     </div>
   </div>
   <% end %>
   <div class="col-md-12">
-    <%= link_to "Add new album", new_artist_album_path(@artist.id), class: "btn btn-primary" %>
+    <%= link_to "Add new album", new_artist_album_path(@artist.id)%>
   </div>
 </div>

@@ -1,15 +1,18 @@
 class SongsController < ApplicationController
+  before_action :set_artist, only: [:new, :create]
+  before_action :set_album, only: [:new, :create]
   before_action :set_song, only: [:destroy]
 
   def new
     @song = Song.new
-    @artist = Artist.find(params[:artist_id])
+    set_artist
+    set_album
   end
 
   def create
-    @artist = Artist.find(params[:artist_id])
-    @song = Song.new(song_params.merge(artist_id: params[:artist_id]))
-
+    set_artist
+    set_album
+    @song = Song.new(song_params.merge(album_id: params[:album_id]))
     if @song.save
       redirect_to artist_path(params[:artist_id])
     else
@@ -19,15 +22,23 @@ class SongsController < ApplicationController
 
   def destroy
     @song.destroy
-    redirect_to @song.artist
+    redirect_to @song.album.artist
   end
 
   private
+  def set_artist
+    @artist = Artist.find(params[:artist_id])
+  end
+
+  def set_album
+    @album = Album.find(params[:album_id])
+  end
+
   def set_song
     @song = Song.find(params[:id])
   end
 
   def song_params
-    params.require(:song).permit(:name, :album_id, :track_number, :artist_id)
+    params.require(:song).permit(:name, :track_number, :artist_id, :album_id)
   end
 end
