@@ -15,6 +15,10 @@ class AlbumsController < ApplicationController
     end
   end
 
+  def index
+    @artist = Artist.find(params[:artist_id])
+    @albums = Albums.find_by(artist_id: @artist.id)
+  end
 
   private
   def album_params

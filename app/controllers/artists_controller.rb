@@ -9,6 +9,7 @@ class ArtistsController < ApplicationController
   end
 
   def show
+    @songs = @artist.songs.order(:album_id, :track_number)
   end
 
   def destroy

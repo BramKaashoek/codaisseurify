@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   root to: "artists#index"
 
   resources :artists do
-    resources :albums, not: [:index, :edit, :update, :show]
-    resources :songs, not: [:index, :edit, :update]
+    resources :albums, except: [:index, :edit, :update]
+    resources :songs, except: [:index, :edit, :update]
   end
   resources :artist_image, only: [:show, :new, :create]
 
