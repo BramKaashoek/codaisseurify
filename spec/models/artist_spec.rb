@@ -9,7 +9,7 @@ RSpec.describe Artist, type: :model do
   end
 
   describe "associations" do
-    it { should have_many(:songs) }
-    it { should have_one (:artist_image) }
+    it { should have_many (:albums) }
+    it { should have_many(:songs).through(:albums) }
   end
 end

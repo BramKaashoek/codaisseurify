@@ -1,6 +1,6 @@
 class Album < ApplicationRecord
   mount_uploader :image, ImageUploader
-  
+
   belongs_to :artist
   has_many :songs, dependent: :destroy
 
