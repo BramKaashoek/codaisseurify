@@ -4,6 +4,9 @@ class Artist < ApplicationRecord
   has_one :artist_image, dependent: :destroy
 
   validates :name, :genre, :country, presence: true
+  validates :image, presence: true
+
+  mount_uploader :image, ImageUploader
 
   def self.order_by_name
     order(:name)

@@ -5,6 +5,7 @@ class MakeArtist < ActiveRecord::Migration[5.1]
       t.string :genre
       t.string :country
       t.string :website
+      t.string :image
 
       t.timestamps
     end

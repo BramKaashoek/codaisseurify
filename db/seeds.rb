@@ -1,17 +1,11 @@
 Artist.destroy_all
 
 
-belakor = Artist.create!(name: "Be'lakor", genre: "Melodic Death Metal", country: "Australia", website: "belakorband.com")
-insomnium = Artist.create!(name: "Insomnium", genre: "Melodic Death Metal", country: "Finland", website: "insomnium.net")
-burial = Artist.create!(name: "Burial", genre: "Dubstep", country: "Great Britain", website: "burial.bandcamp.com")
-katatonia = Artist.create!(name: "Katatonia", genre: "Progressive Metal", country: "Sweden", website: "katatonia.com")
-rammstein = Artist.create!(name: "Rammstein", genre: "Neue Deutsche Harde", country: "Germany", website: "rammstein.de")
-
-belakor_image = ArtistImage.create!(remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710094/belakor_ogbgsg.jpg", artist: belakor)
-insomnium_image =  ArtistImage.create!(remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710094/insomnium_lt3gzo.jpg", artist: insomnium)
-burial_image =  ArtistImage.create!(remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710094/burial_qf8qnk.jpg", artist: burial )
-katatonia_image =  ArtistImage.create!(remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710095/katatonia_vbwedk.jpg", artist: katatonia )
-rammstein_image =  ArtistImage.create!(remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710094/rammstein_s1r2j2.jpg", artist: rammstein)
+belakor = Artist.create!(name: "Be'lakor", genre: "Melodic Death Metal", country: "Australia", website: "belakorband.com", image: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710094/belakor_ogbgsg.jpg")
+burial = Artist.create!(name: "Burial", genre: "Dubstep", country: "Great Britain", website: "burial.bandcamp.com", image: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710094/burial_qf8qnk.jpg")
+insomnium = Artist.create!(name: "Insomnium", genre: "Melodic Death Metal", country: "Finland", website: "insomnium.net", image: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710094/insomnium_lt3gzo.jpg")
+katatonia = Artist.create!(name: "Katatonia", genre: "Progressive Metal", country: "Sweden", website: "katatonia.com", image: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710095/katatonia_vbwedk.jpg")
+rammstein = Artist.create!(name: "Rammstein", genre: "Neue Deutsche Harde", country: "Germany", website: "rammstein.de", image: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710094/rammstein_s1r2j2.jpg")
 
 belakor_of_breath_and_bone= Album.create!(name: "Of Breath and Bone", year: 2012, artist: belakor, remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710088/belakor_of_breath_and_bone_rgoder.jpg")
 insomnium_winters_gate= Album.create!(name: "Winter's Gate", year: 2016, artist: insomnium, remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710088/insomnium_winters_gate_xqubow.jpg")
