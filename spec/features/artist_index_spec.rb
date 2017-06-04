@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe "index show show artists" do
+
   let!(:artist1) { create :artist, name: "henk" }
   let!(:album1) { create :album, name: "henksalbum", artist: artist1 }
   let!(:song1) { create :song, name: "henkssong", album: album1 }
