@@ -3,7 +3,7 @@ Album.destroy_all
 Song.destroy_all
 
 
-belakor = Artist.create!(name: "Be'lakor", genre: "Melodic Death Metal", country: "Australia", website: "belakorband.com", image: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710094/belakor_ogbgsg.jpg")
+belakor = Artist.create!(name: "Be'lakor", genre: "Melodic Death Metal", country: "Australia", website: "belakorband.com", remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710094/belakor_ogbgsg.jpg")
 burial = Artist.create!(name: "Burial", genre: "Dubstep", country: "Great Britain", website: "burial.bandcamp.com", remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710094/burial_qf8qnk.jpg")
 insomnium = Artist.create!(name: "Insomnium", genre: "Melodic Death Metal", country: "Finland", website: "insomnium.net", remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710094/insomnium_lt3gzo.jpg")
 katatonia = Artist.create!(name: "Katatonia", genre: "Progressive Metal", country: "Sweden", website: "katatonia.com", remote_image_url: "http://res.cloudinary.com/dr9a28l84/image/upload/v1495710095/katatonia_vbwedk.jpg")
