@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     end
   end
   resources :artist_image, only: [:show, :new, :create]
-
+  post "artists/:id/delete_all_songs", to: "artists#delete_all_songs", as: :delete_all_songs
 end
