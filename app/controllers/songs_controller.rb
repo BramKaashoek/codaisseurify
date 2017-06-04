@@ -3,6 +3,8 @@ class SongsController < ApplicationController
   before_action :set_album, only: [:new, :create]
   before_action :set_song, only: [:destroy]
 
+  respond_to :html, :js
+
   def new
     @song = Song.new
     set_artist
