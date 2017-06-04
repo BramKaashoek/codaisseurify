@@ -25,7 +25,7 @@ class SongsController < ApplicationController
   def destroy
     @song.destroy
     respond_to do |format|
-      format.html { redirect_to artists_url }
+      format.html
       format.js
     end
   end
