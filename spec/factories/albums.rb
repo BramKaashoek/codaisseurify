@@ -1,9 +1,8 @@
 FactoryGirl.define do
   factory :album do
-
     name { Faker::Name.first_name }
-    image "http://img05.deviantart.net/5722/i/2013/035/4/9/vomiting_gnome_meme_by_soplon-d5tup49.png"
-
+    image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'logo_image.jpg'), 'image/jpg') }
+    year { Faker::Number.between(1000, 2000)}
     artist { build :artist}
   end
 end
