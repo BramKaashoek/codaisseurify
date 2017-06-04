@@ -1,21 +1,11 @@
 <div class="container-fluid col-md-10 col-md-offset-1">
-  <% @songs.each do |song| %>
-    <div class="col-md-3 col-md-offset-1 panel panel-primary song-card", id="song_<%= song.id %>">
-    <div class="col-md-6"> <h5><%= song.name %></h5></div>
-    <div class="col-md-6">
-      <%= image_tag song.album.image.thumbnail, class: "style_image"%>
-    </div>
-    <div class="col-md-9">
-      Track <%= song.track_number %> on <%= song.album.name %>
-    </div>
-    <% if user_signed_in? %>
-      <div class="text-right col-md-3"><%= link_to "Delete", artist_album_song_path(song.album.artist.id, song.album.id, song.id), method: :delete, remote: true %> </div>
-    <% end %>
+  <div id="songs_container">
+    <%= render @songs %>
   </div>
-  <% end %>
   <div class="col-md-12 top-buffer">
+    <div id="select-album", style="display:none;"></div>
     <% if user_signed_in? %>
-    <div class=" col-md-3 col-md-offset-1 text-left"><%= link_to "Add Song", artist_albums_path(@artist) %></div>
+    <div class=" col-md-3 col-md-offset-1 text-left"><%= link_to "Add Song", artist_albums_path(@artist), remote: true %></div>
     <div class="col-md-4 text-center"> <%= link_to "Delete All Songs", delete_all_songs_path(@artist.id), method: :post, remote: true %></div>
     <div class="col-md-4 text-right"><%= link_to "Delete Artist", artist_path(@artist), method: :delete, data: {confirm: "Are you sure?"} %></div>
     <div cass="col-md-12"> &zwnj; </div>

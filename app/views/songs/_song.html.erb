@@ -1,0 +1,12 @@
+<div class="col-md-3 col-md-offset-1 panel panel-primary song-card", id="song_<%= song.id %>">
+<div class="col-md-6"> <h5><%= song.name %></h5></div>
+<div class="col-md-6">
+  <%= image_tag song.album.image.thumbnail, class: "style_image"%>
+</div>
+<div class="col-md-9">
+  Track <%= song.track_number %> on <%= song.album.name %>
+</div>
+<% if user_signed_in? %>
+  <div class="text-right col-md-3"><%= link_to "Delete", artist_album_song_path(song.album.artist.id, song.album.id, song.id), method: :delete, remote: true %> </div>
+<% end %>
+</div>

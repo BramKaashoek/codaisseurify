@@ -1,0 +1,11 @@
+<div class="col-md-3 col-md-offset-1 panel panel-primary" id="album_<%= album.id %>">
+  <div class="col-md-12">
+    <%= link_to album.name, new_artist_album_song_path(artist_id: @artist.id, album_id: album.id), class: "album-link-styling", remote: true %>
+  </div>
+  <div class="col-md-12">
+    <%= link_to image_tag(album.image.medium, class: "style_image"), new_artist_album_song_path(artist_id: @artist.id, album_id: album.id), remote: true %>
+  </div>
+  <div class="col-md-12">
+  <%= link_to "Delete Abum", artist_album_path(@artist.id, album.id), method: :delete, data: {confirm: "Are you sure?"}, remote: true %>
+  </div>
+</div>
